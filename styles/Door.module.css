@@ -1,0 +1,62 @@
+.area {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: var(--area-porta-largura);
+  height: var(--area-porta-altura);
+  margin: 5px;
+}
+
+.frame {
+  display: flex;
+  flex-grow: 1;
+  position: relative;
+  border-top: 5px solid brown;
+  border-right: 5px solid brown;
+  border-left: 5px solid brown;
+  width: 90%;
+}
+
+.door {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex-grow: 1;
+  background-color: chocolate;
+  padding: 15px;
+}
+
+.knob {
+  position: absolute;
+  align-self: flex-start;
+  top: calc(0.45 * var(--area-porta-altura));
+  height: 20px;
+  width: 20px;
+  border-radius: 50%;
+  background-color: brown;
+}
+
+.number {
+  font-size: 3rem;
+  color: brown;
+}
+
+.floor {
+  height: 10px;
+  width: 100%;
+  background-color: #ddd;
+}
+
+.selected.frame {
+  border-top: 5px solid yellow;
+  border-right: 5px solid yellow;
+  border-left: 5px solid yellow;
+}
+
+.selected.knob {
+  background-color: yellow;
+}
+
+.selected.number {
+  color: yellow;
+}

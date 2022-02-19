@@ -1,16 +1,23 @@
 import styles from "../styles/Door.module.css";
 
-//TODO: STUDY THE BEST WHAY TO USE HTML5 TAGS IN THIS COMPONENT
-function Door({isSelected}) {
+import DoorModel from '../model/DoorModel';
 
-  const classSelected = isSelected ? styles.selected : '';
+interface DoorProps {
+  door: DoorModel;
+}
+
+//TODO: STUDY THE BEST WHAY TO USE HTML5 TAGS IN THIS COMPONENT
+function Door(props: DoorProps) {
+  const { door } = props;
+
+  const classSelected = door.isSelected ? styles.selected : '';
 
   return (
     <main className={styles.area}>
       <div className={styles.frame + ' ' + classSelected}>
 
         <section className={styles.door}>
-          <article className={styles.number + ' ' + classSelected}>3</article>
+          <article className={styles.number + ' ' + classSelected}>{door.number}</article>
           <article className={styles.knob + ' ' + classSelected}></article>
         </section>
 

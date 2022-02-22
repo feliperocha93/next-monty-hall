@@ -1,17 +1,17 @@
 class DoorModel {
   #number: number
-  #hasPresent: boolean
+  #hasGift: boolean
   #isSelected: boolean
   #isOpened: boolean
 
   constructor(
     number: number,
-    hasPresent = false,
+    hasGift = false,
     isSelected = false,
     isOpened = false
   ) {
     this.#number = number;
-    this.#hasPresent = hasPresent;
+    this.#hasGift = hasGift;
     this.#isSelected = isSelected;
     this.#isOpened = isOpened;
   }
@@ -20,8 +20,8 @@ class DoorModel {
     return this.#number;
   }
 
-  get hasPresent() {
-    return this.#hasPresent;
+  get hasGift() {
+    return this.#hasGift;
   }
 
   get isSelected() {
@@ -32,11 +32,15 @@ class DoorModel {
     return this.#isOpened;
   }
 
+  get isClosed() {
+    return !this.#isOpened;
+  }
+
   removeSelect() {
     const isSelected = false;
     return new DoorModel(
       this.number,
-      this.hasPresent,
+      this.hasGift,
       isSelected,
       this.isOpened
     );
@@ -46,7 +50,7 @@ class DoorModel {
     const isSelected = !this.isSelected;
     return new DoorModel(
       this.number,
-      this.hasPresent,
+      this.hasGift,
       isSelected,
       this.isOpened
     );
@@ -56,7 +60,7 @@ class DoorModel {
     const isOpened = true;
     return new DoorModel(
       this.number,
-      this.hasPresent,
+      this.hasGift,
       this.isSelected,
       isOpened
     );

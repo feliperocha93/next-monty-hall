@@ -1,8 +1,8 @@
-import styles from '../styles/Present.module.css';
+import styles from '../styles/Gift.module.css';
 
-function Present() {
+function Gift() {
   return (
-    <div className={styles.present}>
+    <div className={styles.Gift}>
       <div className={styles.head}></div>
       <div className={styles.body}></div>
       <div className={styles.tape + ' ' + styles.vertical}></div>
@@ -11,4 +11,4 @@ function Present() {
   );
 }
 
-export default Present;
+export default Gift;
